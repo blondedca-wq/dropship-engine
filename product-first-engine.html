@@ -27340,7 +27340,7 @@ var NEW_PRODUCTS = [
 
 function renderRail(){
   const r=document.getElementById('rail');r.innerHTML='';
-  if(!window.__dedup){window.__dedup=1;for(var _i=DATA.length-1;_i>=0;_i--){if(DATA[_i]&&DATA[_i].id>=11&&DATA[_i].id<=61)DATA.splice(_i,1);}try{if(typeof NEW_PRODUCTS!=='undefined'&&NEW_PRODUCTS.length)DATA.push.apply(DATA,NEW_PRODUCTS);}catch(e){}var CUT={63:1,65:1,66:1,67:1,70:1,71:1,72:1,75:1,77:1,78:1,80:1,81:1,82:1};for(var _j=DATA.length-1;_j>=0;_j--){if(DATA[_j]&&CUT[DATA[_j].id])DATA.splice(_j,1);}if(activeProduct>=DATA.length)activeProduct=0;}
+  if(!window.__dedup){window.__dedup=1;for(var _i=DATA.length-1;_i>=0;_i--){if(DATA[_i]&&DATA[_i].id>=11&&DATA[_i].id<=61)DATA.splice(_i,1);}try{if(typeof NEW_PRODUCTS!=='undefined'&&NEW_PRODUCTS.length)DATA.push.apply(DATA,NEW_PRODUCTS);}catch(e){}var CUT={63:1,65:1,66:1,67:1,70:1,71:1,72:1,75:1,77:1,78:1,80:1,81:1,82:1,/*v3 audit 2026-07-03 — Amazon<50%/saturation/flags:*/3:1,4:1,6:1,7:1,68:1,73:1,79:1,83:1,84:1,86:1,87:1,88:1,89:1,90:1,91:1,92:1,93:1,94:1,95:1,103:1,111:1,112:1,119:1,121:1,124:1,126:1,127:1,131:1,132:1,137:1,141:1,146:1,148:1,149:1,153:1,155:1,156:1,157:1,158:1,160:1,161:1,162:1,163:1,164:1,166:1,167:1,169:1,170:1,/*park-season, return Oct:*/154:1,171:1};for(var _j=DATA.length-1;_j>=0;_j--){if(DATA[_j]&&CUT[DATA[_j].id])DATA.splice(_j,1);}if(activeProduct>=DATA.length)activeProduct=0;}
   DATA.forEach((p,i)=>{
     const c=el('div','pcard'+(i===activeProduct?' active':''));
     c.innerHTML=`<div class="pnum">PRODUCT ${i+1}</div>
