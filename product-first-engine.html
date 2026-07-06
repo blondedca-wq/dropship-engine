@@ -16647,7 +16647,7 @@ function crowdVerdict(t){return t>=80?['go','80+ → investigate hard']:t>=60?['
 
 /* ========================= RENDER ========================= */
 let activeProduct=0, activeNiche=0, activeAngle=0, activeTab='persona', nicheCap=null, nicheRanked=[];
-const TABS=[['persona','Psychology'],['angles','Angle Lab'],['story','Storyboard'],['hooks','Hook Machine'],['posting','Posting System'],['organic','Bio · Tags · SEO'],['factory','Content Factory'],['higgs','Higgsfield'],['refs','References'],['track','Tracking & Scale'],['source','Sourcing'],['discovery','Discovery'],['competitor','Competitor Intel'],['logo','Logo · Brand'],['emails','Emails']];
+const TABS=[['ads','⭐ Ads Plan'],['persona','Psychology'],['angles','Angle Lab'],['story','Storyboard'],['hooks','Hook Machine'],['posting','Posting System'],['organic','Bio · Tags · SEO'],['factory','Content Factory'],['higgs','Higgsfield'],['refs','References'],['track','Tracking & Scale'],['source','Sourcing'],['discovery','Discovery'],['competitor','Competitor Intel'],['logo','Logo · Brand'],['emails','Emails']];
 
 function el(t,c,h){const e=document.createElement(t);if(c)e.className=c;if(h!=null)e.innerHTML=h;return e;}
 function esc(s){return (s==null?'':String(s)).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
@@ -28784,8 +28784,55 @@ function renderPane(n){
     h=logoPane(DATA[activeProduct],n);
   } else if(activeTab==='emails'){
     h=emailsPane(DATA[activeProduct],n);
+  } else if(activeTab==='ads'){
+    h=adsPane(DATA[activeProduct],n);
   }
   b.innerHTML=h;
+}
+
+/* ===== ADS PLAN tab (AD-CREATION-WORKFLOW v2, 2026-07-06) — per-product plan, localStorage-persisted ===== */
+function adsGet(id){try{return JSON.parse(localStorage.getItem('adsplan_'+id)||'{}')}catch(e){return{}}}
+function adsSave(id,S){localStorage.setItem('adsplan_'+id,JSON.stringify(S));}
+function adsSetStatus(id,i,v){const S=adsGet(id);S.st=S.st||{};S.st[i]=v;adsSave(id,S);}
+function adsSetTxt(id,f,el){const S=adsGet(id);S[f]=el.value;adsSave(id,S);}
+function adsPane(p,n){
+  const S=adsGet(p.id);
+  const angles=(n.angles||[]).slice(0,5);
+  const hooks=(n.hooks||[]).slice(0,3);
+  const stOpts=['planned','scripted','produced','posted','remixed'];
+  let rows='';
+  for(let d=1;d<=15;d++){
+    const ai=Math.floor((d-1)/3), hi=(d-1)%3;
+    const a=angles[ai]||{n:'Angle '+(ai+1),c:''};
+    const hk=hooks[hi]||'';
+    const cur=(S.st&&S.st[d])||'planned';
+    const opts=stOpts.map(o=>`<option value="${o}"${o===cur?' selected':''}>${o}</option>`).join('');
+    rows+=`<tr><td style="white-space:nowrap">Day ${d} · AM</td><td><b>${esc(a.n)}</b><br><span style="color:var(--muted);font-size:11.5px">${esc(a.c||'')}</span></td><td style="font-size:12px">${esc(hk)}</td><td><select onchange="adsSetStatus(${p.id},${d},this.value)" style="background:#0c0c16;border:1px solid var(--border);border-radius:6px;color:var(--text);padding:4px 6px">${opts}</select></td></tr>`;
+  }
+  const fbLib='https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=US&media_type=video&q='+encodeURIComponent((p.name||'')+' '+(n.key||''));
+  return `
+  <div class="block" style="border-left:3px solid var(--accent2)"><h5>⭐ SOP v2 — the locked rules (2026-07-06)</h5>
+    <p style="font-size:12.5px;color:#cfcfe0">ORGANIC FB Reels only · <b>1 ad/day produced → posted same MORNING, days 1–15</b> · 15 ads = 5 angles × 3 hooks (~50% of monthly credits) · 30s law · one persona Element · native Seedance VO · swipe-anchored + VoC hooks (mandatory) · <b>compliance pre-gen gate</b> · never kill an angle — rebalance · days 16–30 = no new gen (remix/read/build) · <b>winner = FIRST SALE → boost that Reel $10/day × 7</b> · no pixel until graduation · caption = curiosity + “link in comments”.</p>
+    <p style="font-size:12px;color:var(--muted)">GATE: no ad posts until the funnel checklist passes (card + Apple Pay live · zero dead UI · LCP &lt;3s · checkout QA).</p>
+  </div>
+  <div class="block"><h5>Pre-flight checklist</h5>
+    <p style="font-size:12.5px;color:#cfcfe0">☐ Funnel checklist passed &nbsp;☐ FB page complete (logo/bio/link) &nbsp;☐ Warm phase live (3 credited niche reposts/day) &nbsp;☐ Persona Element locked (mean of niches, 30–50) &nbsp;☐ Product Element (exact unit) &nbsp;☐ Swipe anchors pulled &nbsp;☐ VoC bank filled below &nbsp;☐ Compliance notes read</p>
+    <p class="lbl" style="margin-top:8px">Swipe sources</p>
+    <p style="font-size:12.5px"><a href="${fbLib}" target="_blank" style="color:var(--accent)">FB Ad Library — “${esc(p.name)} ${esc(n.key||'')}” ↗</a> · <a href="https://app.tryatria.com" target="_blank" style="color:var(--accent)">Atria ↗</a> · <a href="https://app.minea.com" target="_blank" style="color:var(--accent)">Minea ↗</a></p>
+  </div>
+  <div class="block"><h5>15-day plan — 5 angles × 3 hooks (best-guess angle leads; rebalance later slots toward the leaders)</h5>
+    <table style="width:100%;border-collapse:collapse;font-size:12.5px"><thead><tr style="color:var(--muted);text-align:left"><th style="padding:4px">Slot</th><th>Angle</th><th>Hook seed (VoC)</th><th>Status</th></tr></thead><tbody>${rows}</tbody></table>
+    <p class="note" style="margin-top:8px">Statuses persist in this browser (localStorage). Hook seeds come from this niche's Hook Machine — replace with mined VoC lines as they're gathered.</p>
+  </div>
+  <div class="block"><h5>VoC hook bank (mandatory before scripting — real 30–50 buyer language)</h5>
+    <textarea onblur="adsSetTxt(${p.id},'voc',this)" placeholder="Paste mined lines from competitor reviews, FB comments, forums, Reddit…" style="width:100%;min-height:110px;background:#0c0c16;border:1px solid var(--border);border-radius:8px;color:var(--text);padding:10px;font-size:12.5px">${esc(S.voc||'')}</textarea>
+  </div>
+  <div class="block"><h5>Swipe anchors (winning-ad links + distilled beats)</h5>
+    <textarea onblur="adsSetTxt(${p.id},'anchors',this)" placeholder="Link · hook · pacing · beats · CTA — one per line" style="width:100%;min-height:90px;background:#0c0c16;border:1px solid var(--border);border-radius:8px;color:var(--text);padding:10px;font-size:12.5px">${esc(S.anchors||'')}</textarea>
+  </div>
+  <div class="block"><h5>Decision log (Claude's weekly reads — views · comments · ladder · verdicts)</h5>
+    <textarea onblur="adsSetTxt(${p.id},'log',this)" placeholder="Week 1 read… Week 2 read… Day-30 post-mortem…" style="width:100%;min-height:110px;background:#0c0c16;border:1px solid var(--border);border-radius:8px;color:var(--text);padding:10px;font-size:12.5px">${esc(S.log||'')}</textarea>
+  </div>`;
 }
 function renderAll(){renderRail();renderProduct();}
 
