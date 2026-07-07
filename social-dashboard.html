@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Social Command — Softwater · NerveCalm</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<style>
+:root{--bg:#0d0f14;--card:#161a22;--card2:#1d222c;--line:#262c38;--txt:#e8ecf3;--dim:#8b93a4;--sw:#e57ea8;--nc:#7cc4c0;--good:#4ade80;--warn:#fbbf24}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--txt);font:15px/1.5 -apple-system,Segoe UI,Roboto,sans-serif;padding:20px;max-width:1200px;margin:0 auto}
+h1{font-size:22px;letter-spacing:-.3px}
+.sub{color:var(--dim);font-size:13px;margin:2px 0 20px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media(max-width:820px){.grid{grid-template-columns:1fr}}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px}
+.phead{display:flex;align-items:center;gap:10px;margin-bottom:4px}
+.dot{width:10px;height:10px;border-radius:50%}
+.pname{font-weight:600;font-size:17px}
+.badge{margin-left:auto;font-size:11px;padding:3px 9px;border-radius:20px;background:var(--card2);color:var(--warn);border:1px solid var(--line)}
+.kpis{display:flex;gap:14px;margin:14px 0 8px;flex-wrap:wrap}
+.kpi{background:var(--card2);border-radius:10px;padding:10px 14px;flex:1;min-width:78px}
+.kpi .n{font-size:20px;font-weight:700}
+.kpi .l{font-size:11px;color:var(--dim);text-transform:uppercase;letter-spacing:.4px}
+.chartbox{margin:8px 0 4px;height:150px;position:relative}
+table{width:100%;border-collapse:collapse;margin-top:6px;font-size:13px}
+th,td{text-align:left;padding:7px 6px;border-bottom:1px solid var(--line)}
+th{color:var(--dim);font-weight:500;font-size:11px;text-transform:uppercase;letter-spacing:.4px}
+td.num{text-align:right;font-variant-numeric:tabular-nums}
+.tag{font-size:10px;color:var(--dim);background:var(--card2);padding:2px 7px;border-radius:5px}
+.best{color:var(--good)}
+.foot{color:var(--dim);font-size:12px;margin-top:22px;border-top:1px solid var(--line);padding-top:12px}
+.rl{color:var(--sw);text-decoration:none}
+</style>
+</head>
+<body>
+<h1>Social Command</h1>
+<div class="sub" id="updated">Loading…</div>
+<div class="grid" id="pages"></div>
+<div class="foot">
+  Counts pulled live from Facebook by the daily social-ops task; graphs render from the latest pull. Warm phase = audience-building reposts before ads. •
+  <a class="rl" href="./product-first-engine.html">← Product Engine</a>
+</div>
+<script>
+const PCOL={softwater:'#e57ea8',nervecalm:'#7cc4c0'};
+function n(x){return x>=1000?(x/1000).toFixed(1)+'k':x}
+async function load(){
+  let data;
+  try{ data=await fetch('./SOCIAL-STATS.json?t='+Date.now()).then(r=>r.json()); }
+  catch(e){ document.getElementById('updated').textContent='Could not load stats file.'; return; }
+  document.getElementById('updated').textContent='Last pull: '+new Date(data.updated).toLocaleString()+' · '+data.note;
+  const wrap=document.getElementById('pages'); wrap.innerHTML='';
+  data.pages.forEach(p=>{
+    const col=PCOL[p.id]||'#888';
+    const tot=p.posts.reduce((a,x)=>({v:a.v+ (x.views||0),l:a.l+(x.likes||0),c:a.c+(x.comments||0),s:a.s+(x.shares||0)}),{v:0,l:0,c:0,s:0});
+    const foll=p.followers_history?p.followers_history[p.followers_history.length-1].v:0;
+    const best=[...p.posts].sort((a,b)=>(b.views||0)-(a.views||0))[0];
+    const card=document.createElement('div'); card.className='card';
+    card.innerHTML=`
+      <div class="phead"><span class="dot" style="background:${col}"></span>
+        <span class="pname">${p.name}</span>
+        <span class="badge">${p.phase==='warm'?'WARM · day '+p.warm_day:p.phase.toUpperCase()}</span></div>
+      <div class="kpis">
+        <div class="kpi"><div class="n">${n(foll)}</div><div class="l">Followers</div></div>
+        <div class="kpi"><div class="n">${n(tot.v)}</div><div class="l">Views</div></div>
+        <div class="kpi"><div class="n">${n(tot.l)}</div><div class="l">Likes</div></div>
+        <div class="kpi"><div class="n">${n(tot.c)}</div><div class="l">Comments</div></div>
+        <div class="kpi"><div class="n">${n(tot.s)}</div><div class="l">Shares</div></div>
+      </div>
+      <div class="chartbox"><canvas id="ch-${p.id}"></canvas></div>
+      <table><thead><tr><th>Post</th><th>Lane</th><th class="num">Views</th><th class="num">Lk</th><th class="num">Cm</th></tr></thead>
+      <tbody>${p.posts.map(x=>`<tr><td>${x.title}${best&&x.pid===best.pid&&(x.views||0)>0?' <span class="best">▲ top</span>':''}</td>
+        <td><span class="tag">${x.lane}</span></td><td class="num">${n(x.views||0)}</td><td class="num">${n(x.likes||0)}</td><td class="num">${n(x.comments||0)}</td></tr>`).join('')}</tbody></table>`;
+    wrap.appendChild(card);
+    // engagement-per-day line
+    const byDay={};
+    p.posts.forEach(x=>{const d=x.date;byDay[d]=byDay[d]||{v:0,e:0};byDay[d].v+=(x.views||0);byDay[d].e+=(x.likes||0)+(x.comments||0)+(x.shares||0);});
+    const days=Object.keys(byDay).sort();
+    new Chart(document.getElementById('ch-'+p.id),{type:'line',
+      data:{labels:days.map(d=>d.slice(5)),datasets:[
+        {label:'Views',data:days.map(d=>byDay[d].v),borderColor:col,backgroundColor:col+'22',tension:.35,fill:true,yAxisID:'y'},
+        {label:'Engagement',data:days.map(d=>byDay[d].e),borderColor:'#fbbf24',tension:.35,yAxisID:'y1'}]},
+      options:{plugins:{legend:{labels:{color:'#8b93a4',boxWidth:10,font:{size:10}}}},
+        scales:{x:{ticks:{color:'#8b93a4',font:{size:10}},grid:{color:'#262c38'}},
+          y:{position:'left',ticks:{color:'#8b93a4',font:{size:10}},grid:{color:'#262c38'}},
+          y1:{position:'right',ticks:{color:'#fbbf24',font:{size:10}},grid:{display:false}}},
+        maintainAspectRatio:false}});
+  });
+}
+load();
+</script>
+</body>
+</html>

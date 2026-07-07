@@ -1,0 +1,32 @@
+{
+  "updated": "2026-07-07T00:00:00Z",
+  "note": "Refreshed by daily social-ops scheduled task. Counts pulled live from Facebook via browser each run.",
+  "pages": [
+    {
+      "id": "softwater",
+      "name": "Softwater.Space",
+      "fb": "https://www.facebook.com/profile.php?id=61591763033139",
+      "phase": "warm",
+      "warm_day": 1,
+      "followers_history": [{"d": "2026-07-07", "v": 0}],
+      "posts": [
+        {"pid": "sw-d1-1", "date": "2026-07-07", "type": "repost", "lane": "hair-hack", "title": "Heatless curls (via Nicole's Hairstyle)", "views": 0, "likes": 0, "comments": 0, "shares": 1},
+        {"pid": "sw-d1-2", "date": "2026-07-07", "type": "repost", "lane": "aesthetic", "title": "Bathroom makeover (via NeutralCatt)", "views": 0, "likes": 0, "comments": 0, "shares": 1},
+        {"pid": "sw-d1-3", "date": "2026-07-07", "type": "repost", "lane": "water-fact", "title": "Limescale scale (via tanyahomeinspo)", "views": 0, "likes": 0, "comments": 0, "shares": 1}
+      ]
+    },
+    {
+      "id": "nervecalm",
+      "name": "NerveCalm",
+      "fb": "https://www.facebook.com/profile.php?id=61591767083088",
+      "phase": "warm",
+      "warm_day": 1,
+      "followers_history": [{"d": "2026-07-07", "v": 0}],
+      "posts": [
+        {"pid": "nc-d1-1", "date": "2026-07-07", "type": "repost", "lane": "desk-stretch", "title": "Neck/shoulder stretch (via SynerMuscle)", "views": 0, "likes": 0, "comments": 0, "shares": 1},
+        {"pid": "nc-d1-2", "date": "2026-07-07", "type": "repost", "lane": "winddown", "title": "Cozy wind-down (via Rasandailyy)", "views": 0, "likes": 0, "comments": 0, "shares": 1},
+        {"pid": "nc-d1-3", "date": "2026-07-07", "type": "repost", "lane": "relatable", "title": "Period comedy (via The Gilbert Twins)", "views": 0, "likes": 0, "comments": 0, "shares": 1}
+      ]
+    }
+  ]
+}
