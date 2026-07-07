@@ -1,6 +1,6 @@
 {
-  "updated": "2026-07-07T00:00:00Z",
-  "note": "Refreshed by daily social-ops scheduled task. Counts pulled live from Facebook via browser each run.",
+  "updated": "2026-07-07T17:12:44Z",
+  "note": "Day-1 warm posts live; 0 engagement so far is normal (new pages, no audience yet). Numbers grow as the warm phase builds reach. Auto-refreshed daily 9am + on demand.",
   "pages": [
     {
       "id": "softwater",
