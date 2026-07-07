@@ -1,6 +1,6 @@
 {
-  "updated": "2026-07-07T17:12:44Z",
-  "note": "Day-1 warm posts live; 0 engagement so far is normal (new pages, no audience yet). Numbers grow as the warm phase builds reach. Auto-refreshed daily 9am + on demand.",
+  "updated": "2026-07-07T17:52:00Z",
+  "note": "D1 afternoon ops run. FIX: NerveCalm's 3 D1 reposts had been posted by the 'Nerve Calm' USER PROFILE (id 61591458959368), not the brand Page — re-shared all 3 AS the Nervecalm Page (id 61591767083088) at ~1:47-1:49 PM ET. ALERT: switching FB accounts to reach Softwater logged the whole browser session out; every saved account now asks for a password — Ahmed must log back in (Nerve Calm + Sofe Walter accounts) before tomorrow's ops. Comments: zero across all pages/posts, nothing to reply to.",
   "pages": [
     {
       "id": "softwater",
@@ -8,11 +8,12 @@
       "fb": "https://www.facebook.com/profile.php?id=61591763033139",
       "phase": "warm",
       "warm_day": 1,
+      "managed_by_account": "Sofe Walter (login required — blocked this run)",
       "followers_history": [{"d": "2026-07-07", "v": 0}],
       "posts": [
-        {"pid": "sw-d1-1", "date": "2026-07-07", "type": "repost", "lane": "hair-hack", "title": "Heatless curls (via Nicole's Hairstyle)", "views": 0, "likes": 0, "comments": 0, "shares": 1},
-        {"pid": "sw-d1-2", "date": "2026-07-07", "type": "repost", "lane": "aesthetic", "title": "Bathroom makeover (via NeutralCatt)", "views": 0, "likes": 0, "comments": 0, "shares": 1},
-        {"pid": "sw-d1-3", "date": "2026-07-07", "type": "repost", "lane": "water-fact", "title": "Limescale scale (via tanyahomeinspo)", "views": 0, "likes": 0, "comments": 0, "shares": 1}
+        {"pid": "sw-d1-1", "date": "2026-07-07", "type": "repost", "lane": "hair-hack", "title": "Heatless curls (via Nicole's Hairstyle)", "views": 0, "likes": 0, "comments": 0, "shares": 1, "note": "not re-verified 07-07 PM (FB feed render + login block)"},
+        {"pid": "sw-d1-2", "date": "2026-07-07", "type": "repost", "lane": "aesthetic", "title": "Bathroom makeover (via NeutralCatt)", "views": 0, "likes": 0, "comments": 0, "shares": 1, "note": "not re-verified 07-07 PM (FB feed render + login block)"},
+        {"pid": "sw-d1-3", "date": "2026-07-07", "type": "repost", "lane": "water-fact", "title": "Limescale scale (via tanyahomeinspo / Tips4home reel)", "views": 0, "likes": 0, "comments": 0, "shares": 1, "note": "verified live 07-07 1:36 PM ET, 0 engagement"}
       ]
     },
     {
@@ -23,9 +24,17 @@
       "warm_day": 1,
       "followers_history": [{"d": "2026-07-07", "v": 0}],
       "posts": [
-        {"pid": "nc-d1-1", "date": "2026-07-07", "type": "repost", "lane": "desk-stretch", "title": "Neck/shoulder stretch (via SynerMuscle)", "views": 0, "likes": 0, "comments": 0, "shares": 1},
-        {"pid": "nc-d1-2", "date": "2026-07-07", "type": "repost", "lane": "winddown", "title": "Cozy wind-down (via Rasandailyy)", "views": 0, "likes": 0, "comments": 0, "shares": 1},
-        {"pid": "nc-d1-3", "date": "2026-07-07", "type": "repost", "lane": "relatable", "title": "Period comedy (via The Gilbert Twins)", "views": 0, "likes": 0, "comments": 0, "shares": 1}
+        {"pid": "nc-d1-1", "date": "2026-07-07", "type": "repost", "lane": "desk-stretch", "title": "Neck/shoulder stretch (via SynerMuscle)", "views": 1, "likes": 0, "comments": 0, "shares": 1, "note": "12:53 PM — went to Nerve Calm PROFILE (61591458959368) by mistake; re-shared as Page 1:49 PM"},
+        {"pid": "nc-d1-2", "date": "2026-07-07", "type": "repost", "lane": "winddown", "title": "Cozy wind-down (via Rasandailyy)", "views": 1, "likes": 0, "comments": 0, "shares": 1, "note": "12:55 PM — went to PROFILE by mistake; re-shared as Page 1:48 PM"},
+        {"pid": "nc-d1-3", "date": "2026-07-07", "type": "repost", "lane": "relatable", "title": "Period comedy (via The Gilbert Twins)", "views": 0, "likes": 0, "comments": 0, "shares": 1, "note": "12:56 PM — went to PROFILE by mistake; re-shared as Page 1:47 PM"},
+        {"pid": "nc-d1-1p", "date": "2026-07-07", "type": "repost-as-page", "lane": "relatable", "title": "Period comedy (via The Gilbert Twins) — AS PAGE", "views": 0, "likes": 0, "comments": 0, "shares": 0},
+        {"pid": "nc-d1-2p", "date": "2026-07-07", "type": "repost-as-page", "lane": "winddown", "title": "Cozy wind-down (via Rasandailyy) — AS PAGE", "views": 0, "likes": 0, "comments": 0, "shares": 0},
+        {"pid": "nc-d1-3p", "date": "2026-07-07", "type": "repost-as-page", "lane": "desk-stretch", "title": "Neck/shoulder stretch (via SynerMuscle) — AS PAGE", "views": 0, "likes": 0, "comments": 0, "shares": 0},
+        {"pid": "nc-pre-1", "date": "2026-07-06", "type": "product-reel", "lane": "pre-warm", "title": "NerveCalm product reel (Jul 6 1:01 PM)", "views": 4, "likes": 0, "comments": 0, "shares": 0},
+        {"pid": "nc-pre-2", "date": "2026-07-05", "type": "product-reel", "lane": "pre-warm", "title": "Available Now At Nervecalm.cc (Jul 5)", "views": 1, "likes": 0, "comments": 0, "shares": 0},
+        {"pid": "nc-pre-3", "date": "2026-07-03", "type": "product-reel", "lane": "pre-warm", "title": "Available now! (Jul 3 6:28 PM)", "views": 1, "likes": 0, "comments": 0, "shares": 0},
+        {"pid": "nc-pre-4", "date": "2026-07-03", "type": "product-reel", "lane": "pre-warm", "title": "Available now at Nervecalm.cc (Jul 3 2:05 PM)", "views": 198, "likes": 1, "comments": 0, "shares": 0},
+        {"pid": "nc-pre-5", "date": "2026-07-02", "type": "product-reel", "lane": "pre-warm", "title": "Available now at nervecalm.cc (Jul 2 7:55 PM)", "views": 216, "likes": 1, "comments": 0, "shares": 0}
       ]
     }
   ]
