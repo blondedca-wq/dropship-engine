@@ -1,6 +1,20 @@
 {
   "updated": "2026-07-12T15:10:00Z",
   "note": "07-12 sweep (Softwater only — NerveCalm account needs Ahmed's password re-login, switch = logout trap). KEY READ CONFIRMED AGAIN: native mashups keep growing (SW-M1 265 · SW-M3 238 · SW-M2 219, +2 net follows, watch time up to 13m) while ALL credited shares sit at 14-30 views. Page total 1,111 views last 28d, spike Jul 9-10 = mashup batch. Softwater followers 0→2. D6 Sunday light post shared 10:45 AM as page ✓. NC D3-D6 posting BLOCKED on login since 07-09.",
+  "highlights": {
+    "comments": [
+      {"d": "2026-06-26", "page": "softwater", "who": "Sofe Walter (own account)", "post": "Available now at Softwater.space (Jun 26)", "text": "Self-comment from our own profile — not a customer.", "replied": true}
+    ],
+    "follower_events": [
+      {"d": "2026-07-11", "page": "softwater", "who": "Marie Brown", "source": "your reel"},
+      {"d": "2026-07-11", "page": "softwater", "who": "Sriju Baraili Century", "source": "your reel"}
+    ],
+    "likes": [
+      {"d": "2026-07-08", "page": "softwater", "post": "2026 spa bathroom setup (via Thewillwebster)", "count": 1},
+      {"d": "2026-07-03", "page": "nervecalm", "post": "Available now at Nervecalm.cc (Jul 3)", "count": 1},
+      {"d": "2026-07-02", "page": "nervecalm", "post": "Available now at nervecalm.cc (Jul 2)", "count": 1}
+    ]
+  },
   "pages": [
     {
       "id": "softwater",
