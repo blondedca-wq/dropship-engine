@@ -1,6 +1,6 @@
 {
-  "updated": "2026-07-12T15:10:00Z",
-  "note": "07-12 sweep (Softwater only — NerveCalm account needs Ahmed's password re-login, switch = logout trap). KEY READ CONFIRMED AGAIN: native mashups keep growing (SW-M1 265 · SW-M3 238 · SW-M2 219, +2 net follows, watch time up to 13m) while ALL credited shares sit at 14-30 views. Page total 1,111 views last 28d, spike Jul 9-10 = mashup batch. Softwater followers 0→2. D6 Sunday light post shared 10:45 AM as page ✓. NC D3-D6 posting BLOCKED on login since 07-09.",
+  "updated": "2026-07-13T00:45:00Z",
+  "note": "07-12 evening sweep: NC UNBLOCKED (Ahmed re-logged the Nerve Calm account) — full catch-up done. 9 NC mashup reels (NC-M4..M12) scheduled Jul 13-15 at 9:30a/12:30p/6:30p ET, all verified in Business Suite scheduled list; SW's 9 were scheduled this morning → BOTH pages fully queued for the 3-day batch. Mashup law holds on NC too: nc-m1 129 views vs credited shares 1-7. NC D6 Sunday light post shared 7:30 PM as page ✓. NC followers still 0, zero comments (checked All-comments filter). NC page 719 views last 28d. Gotcha logged: an NC reel with the 'Lofi Street' library track silently vanished after the scheduled-confirmation twice; same reel with a different track scheduled fine.",
   "highlights": {
     "comments": [
       {"d": "2026-06-26", "page": "softwater", "who": "Sofe Walter (own account)", "post": "Available now at Softwater.space (Jun 26)", "text": "Self-comment from our own profile — not a customer.", "replied": true}
@@ -52,11 +52,16 @@
       "name": "NerveCalm",
       "fb": "https://www.facebook.com/profile.php?id=61591767083088",
       "phase": "warm",
-      "warm_day": 2,
+      "warm_day": 6,
       "comments_pending": 0,
-      "blocked": "Posting + stats paused since 07-09: Nerve Calm FB account needs Ahmed password re-login (account switch = full logout). D3-D6 slots missed.",
-      "followers_history": [{"d": "2026-07-07", "v": 0}, {"d": "2026-07-09", "v": 0}],
+      "views_28d": 719,
+      "followers_history": [{"d": "2026-07-07", "v": 0}, {"d": "2026-07-09", "v": 0}, {"d": "2026-07-12", "v": 0}],
       "posts": [
+        {"pid": "nc-d6-1", "date": "2026-07-12", "type": "repost-as-page", "lane": "self-care-sunday", "title": "Sunday's job is recovery (via Operation Niki Official)", "views": 0, "likes": 0, "comments": 0, "shares": 0, "note": "D6 Sunday light post, shared 7:30 PM AS page (share dialog identity verified); source reel 42.6K likes"},
+        {"pid": "nc-cover", "date": "2026-07-12", "type": "cover-photo", "lane": "housekeeping", "title": "Cover photo updated (6:28 PM — during Ahmed's re-login)", "views": 0, "likes": 0, "comments": 0, "shares": 0},
+        {"pid": "nc-m3", "date": "2026-07-10", "type": "native-mashup", "lane": "winddown", "title": "Tomorrow starts tonight (NC-M3)", "views": 4, "viewers": 3, "likes": 0, "comments": 0, "shares": 0, "net_follows": 0, "impressions": 3, "watch_time": "6s", "views_3s": 1},
+        {"pid": "nc-m2", "date": "2026-07-10", "type": "native-mashup", "lane": "cozy-period", "title": "The survival kit nobody teaches you (NC-M2)", "views": 30, "viewers": 26, "likes": 0, "comments": 0, "shares": 0, "net_follows": 0, "impressions": 28, "watch_time": "1m21s", "views_3s": 9},
+        {"pid": "nc-m1", "date": "2026-07-10", "type": "native-mashup", "lane": "desk", "title": "Your shoulders have been holding your whole week (NC-M1)", "views": 129, "viewers": 122, "likes": 0, "comments": 0, "shares": 0, "net_follows": 0, "impressions": 123, "watch_time": "6m31s", "views_3s": 36, "note": "crossed 100 plays — FB sent milestone notification"},
         {"pid": "nc-d2-1", "date": "2026-07-08", "type": "repost-as-page", "lane": "desk-stretch", "title": "30s upper-trap release (via Kick Pain)", "views": 2, "likes": 0, "comments": 0, "shares": 0, "note": "posted 7:49 PM 07-08 AS page (identity verified pre-post)"},
         {"pid": "nc-d2-2", "date": "2026-07-08", "type": "repost-as-page", "lane": "relatable", "title": "Husband tries period-pain simulator (via The Crazy Hillbilly Gaming)", "views": 2, "likes": 0, "comments": 0, "shares": 0, "note": "7:50 PM"},
         {"pid": "nc-d2-3", "date": "2026-07-08", "type": "repost-as-page", "lane": "winddown", "title": "Quiet evenings (via Rosemarie Victoria)", "views": 1, "likes": 0, "comments": 0, "shares": 0, "note": "7:51 PM"},
