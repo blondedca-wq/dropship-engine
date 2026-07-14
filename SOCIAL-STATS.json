@@ -1,11 +1,13 @@
 {
-  "updated": "2026-07-13T00:45:00Z",
-  "note": "07-12 evening sweep: NC UNBLOCKED (Ahmed re-logged the Nerve Calm account) — full catch-up done. 9 NC mashup reels (NC-M4..M12) scheduled Jul 13-15 at 9:30a/12:30p/6:30p ET, all verified in Business Suite scheduled list; SW's 9 were scheduled this morning → BOTH pages fully queued for the 3-day batch. Mashup law holds on NC too: nc-m1 129 views vs credited shares 1-7. NC D6 Sunday light post shared 7:30 PM as page ✓. NC followers still 0, zero comments (checked All-comments filter). NC page 719 views last 28d. Gotcha logged: an NC reel with the 'Lofi Street' library track silently vanished after the scheduled-confirmation twice; same reel with a different track scheduled fine.",
+  "updated": "2026-07-14T19:35:00Z",
+  "note": "07-14 daily sweep. SCHEDULING CHECK: Softwater today (Jul 14) 9:30am + 12:30pm reels fired ON TIME; 6:30pm still queued; all 3 Jul 15 slots queued. ⚠ Jul 13 MISSED 2 of 3 slots — only one SW reel published Jul 13 (8:31pm, off-schedule); the 9:30am + 12:30pm Jul 13 scheduled reels vanished (neither published nor still scheduled = the audio-track/app-closed vanish bug). The 2 rendered-but-unposted reels can be rescheduled into an open future slot. NerveCalm (logged-out account, verified via public page only): actively posting today, newest reel 3h ago ('Rest day is a valid plan / Girl math: cancelled plans = self care'); NC precise per-slot timing NOT verifiable without Nerve Calm Business Suite login. FOLLOWERS: Softwater 2->3, NerveCalm 0->1 (first-ever NC follower). Metric note: new-post headline numbers below are Business Suite 'Reach' (only value cleanly available in the list view); older mashup entries retain their reel view counts.",
   "highlights": {
     "comments": [
       {"d": "2026-06-26", "page": "softwater", "who": "Sofe Walter (own account)", "post": "Available now at Softwater.space (Jun 26)", "text": "Self-comment from our own profile — not a customer.", "replied": true}
     ],
     "follower_events": [
+      {"d": "2026-07-14", "page": "softwater", "who": "(name not captured — check FB notifications)", "source": "your reel"},
+      {"d": "2026-07-14", "page": "nervecalm", "who": "(name not captured — check FB notifications)", "source": "your reel", "note": "first-ever NerveCalm follower"},
       {"d": "2026-07-11", "page": "softwater", "who": "Marie Brown", "source": "your reel"},
       {"d": "2026-07-11", "page": "softwater", "who": "Sriju Baraili Century", "source": "your reel"}
     ],
@@ -21,14 +23,23 @@
       "name": "Softwater.Space",
       "fb": "https://www.facebook.com/profile.php?id=61591763033139",
       "phase": "warm",
-      "warm_day": 6,
+      "warm_day": 8,
       "managed_by_account": "Sofe Walter",
       "views_28d": 1111,
-      "followers_history": [{"d": "2026-07-07", "v": 0}, {"d": "2026-07-09", "v": 0}, {"d": "2026-07-12", "v": 2}],
+      "followers_history": [{"d": "2026-07-07", "v": 0}, {"d": "2026-07-09", "v": 0}, {"d": "2026-07-12", "v": 2}, {"d": "2026-07-14", "v": 3}],
+      "scheduled_next": [
+        {"date": "2026-07-14", "time": "6:30pm", "title": "Night showers supremacy 🚿 Morning or night?"},
+        {"date": "2026-07-15", "time": "9:30am", "title": "The no-frizz air-dry isn't a technique"},
+        {"date": "2026-07-15", "time": "12:30pm", "title": "Odds are, this is your house too"},
+        {"date": "2026-07-15", "time": "6:30pm", "title": "Midweek reset: warm light, clean towels"}
+      ],
       "posts": [
-        {"pid": "sw-d6-1", "date": "2026-07-12", "type": "repost", "lane": "aesthetic-sunday", "title": "Everything shower but make it therapy (via Barkha Sunwar)", "views": 0, "likes": 0, "comments": 0, "shares": 0, "note": "D6 Sunday light post, 10:45 AM, AS page verified"},
-        {"pid": "sw-m3", "date": "2026-07-10", "type": "native-mashup", "lane": "spa", "title": "Sunday reset but make it actually soft (SW-M3)", "views": 238, "viewers": 215, "likes": 0, "comments": 0, "shares": 0, "net_follows": 1, "impressions": 221, "watch_time": "6m44s", "views_3s": 21},
-        {"pid": "sw-m2", "date": "2026-07-10", "type": "native-mashup", "lane": "water-fact", "title": "If your glasses come out cloudy (SW-M2)", "views": 219, "viewers": 201, "likes": 0, "comments": 0, "shares": 0, "net_follows": 1, "impressions": 205, "watch_time": "8m47s", "views_3s": 41},
+        {"pid": "sw-b-jul14-2", "date": "2026-07-14", "type": "native-mashup", "lane": "water-fact", "title": "Your dishes have been telling you all along (Jul 14 12:30pm)", "reach": 194, "likes": 0, "comments": 0, "shares": 0, "note": "scheduled slot fired ON TIME"},
+        {"pid": "sw-b-jul14-1", "date": "2026-07-14", "type": "native-mashup", "lane": "hair", "title": "Tell me your wash-day ritual and I'll tell you your water (Jul 14 9:30am)", "reach": 41, "likes": 0, "comments": 0, "shares": 0, "note": "scheduled slot fired ON TIME; crosspost"},
+        {"pid": "sw-b-jul13-1", "date": "2026-07-13", "type": "native-mashup", "lane": "spa", "title": "The week gets the mornings — the evenings are yours (Jul 13 8:31pm)", "reach": 91, "likes": 0, "comments": 0, "shares": 0, "note": "ONLY Jul 13 post that fired; 8:31pm off-schedule (the 9:30am+12:30pm Jul 13 slots vanished)"},
+        {"pid": "sw-d6-1", "date": "2026-07-12", "type": "repost", "lane": "aesthetic-sunday", "title": "Everything shower but make it therapy (via Barkha Sunwar)", "views": 3, "likes": 0, "comments": 0, "shares": 0, "note": "D6 Sunday light post, 10:45 AM, AS page verified"},
+        {"pid": "sw-m3", "date": "2026-07-10", "type": "native-mashup", "lane": "spa", "title": "Sunday reset but make it actually soft (SW-M3)", "views": 238, "reach_now": 230, "viewers": 215, "likes": 0, "comments": 0, "shares": 0, "net_follows": 1, "impressions": 221, "watch_time": "6m44s", "views_3s": 21},
+        {"pid": "sw-m2", "date": "2026-07-10", "type": "native-mashup", "lane": "water-fact", "title": "If your glasses come out cloudy (SW-M2)", "views": 219, "reach_now": 209, "viewers": 201, "likes": 0, "comments": 0, "shares": 0, "net_follows": 1, "impressions": 205, "watch_time": "8m47s", "views_3s": 41},
         {"pid": "sw-m1", "date": "2026-07-10", "type": "native-mashup", "lane": "hair", "title": "Softness was never about the products (SW-M1)", "views": 265, "viewers": 240, "likes": 0, "comments": 0, "shares": 0, "net_follows": 0, "impressions": 248, "watch_time": "13m5s", "views_3s": 39},
         {"pid": "sw-d2-3", "date": "2026-07-08", "type": "repost", "lane": "water-fact", "title": "Hard-water dishwasher fix (via hungryforhome)", "views": 19, "likes": 0, "comments": 0, "shares": 0},
         {"pid": "sw-d2-2", "date": "2026-07-08", "type": "repost", "lane": "aesthetic", "title": "2026 spa bathroom setup (via Thewillwebster)", "views": 14, "likes": 1, "comments": 0, "shares": 0},
@@ -39,11 +50,6 @@
         {"pid": "sw-pre-1", "date": "2026-07-03", "type": "product-reel", "lane": "pre-warm", "title": "Available at Softwater.space (Jul 3 2:10 PM)", "views": 309, "likes": null, "comments": 0, "shares": 0},
         {"pid": "sw-pre-2", "date": "2026-07-02", "type": "product-reel", "lane": "pre-warm", "title": "Available now at Softwater.space (Jul 2 1:22 PM)", "views": 76, "likes": null, "comments": 0, "shares": 0},
         {"pid": "sw-pre-3", "date": "2026-07-01", "type": "product-reel", "lane": "pre-warm", "title": "Available now at Softwater.space (Jul 1 4:43 PM)", "views": 86, "likes": null, "comments": 0, "shares": 0},
-        {"pid": "sw-pre-4", "date": "2026-07-01", "type": "product-reel", "lane": "pre-warm", "title": "Available now at Softwater.space (Jul 1 3:51 AM)", "views": 20, "likes": null, "comments": 0, "shares": 0},
-        {"pid": "sw-pre-5", "date": "2026-06-29", "type": "product-reel", "lane": "pre-warm", "title": "Available now at Softwater.space (Jun 29 5:03 PM)", "views": 20, "likes": null, "comments": 0, "shares": 0},
-        {"pid": "sw-pre-6", "date": "2026-06-28", "type": "product-reel", "lane": "pre-warm", "title": "Available now at Softwater.space (Jun 28 2:08 PM)", "views": 14, "likes": null, "comments": 0, "shares": 0},
-        {"pid": "sw-pre-7", "date": "2026-06-27", "type": "product-reel", "lane": "pre-warm", "title": "Available Now At Softwater (Jun 27 4:19 PM)", "views": 18, "likes": null, "comments": 0, "shares": 0},
-        {"pid": "sw-pre-x", "date": "2026-06-27", "type": "product-reel", "lane": "MISPOST", "title": "Available Now At NerveCalm — WRONG PAGE (Jun 27 3:53 PM)", "views": 20, "likes": null, "comments": 0, "shares": 0, "note": "NerveCalm reel on Softwater page — consider delete"},
         {"pid": "sw-pre-8", "date": "2026-06-26", "type": "product-reel", "lane": "pre-warm", "title": "Available now at Softwater.space (Jun 26 10:44 PM)", "views": 280, "likes": null, "comments": 1, "shares": 0, "note": "the 1 comment = Sofe Walter self-comment"}
       ]
     },
@@ -52,25 +58,17 @@
       "name": "NerveCalm",
       "fb": "https://www.facebook.com/profile.php?id=61591767083088",
       "phase": "warm",
-      "warm_day": 6,
+      "warm_day": 8,
       "comments_pending": 0,
       "views_28d": 719,
-      "followers_history": [{"d": "2026-07-07", "v": 0}, {"d": "2026-07-09", "v": 0}, {"d": "2026-07-12", "v": 0}],
+      "verify_status": "PARTIAL — verified via public page only (Nerve Calm account logged out). Actively posting today, newest reel 3h ago. Per-slot timing + view counts + 28d views need Nerve Calm Business Suite login.",
+      "followers_history": [{"d": "2026-07-07", "v": 0}, {"d": "2026-07-09", "v": 0}, {"d": "2026-07-12", "v": 0}, {"d": "2026-07-14", "v": 1}],
       "posts": [
-        {"pid": "nc-d6-1", "date": "2026-07-12", "type": "repost-as-page", "lane": "self-care-sunday", "title": "Sunday's job is recovery (via Operation Niki Official)", "views": 0, "likes": 0, "comments": 0, "shares": 0, "note": "D6 Sunday light post, shared 7:30 PM AS page (share dialog identity verified); source reel 42.6K likes"},
-        {"pid": "nc-cover", "date": "2026-07-12", "type": "cover-photo", "lane": "housekeeping", "title": "Cover photo updated (6:28 PM — during Ahmed's re-login)", "views": 0, "likes": 0, "comments": 0, "shares": 0},
-        {"pid": "nc-m3", "date": "2026-07-10", "type": "native-mashup", "lane": "winddown", "title": "Tomorrow starts tonight (NC-M3)", "views": 4, "viewers": 3, "likes": 0, "comments": 0, "shares": 0, "net_follows": 0, "impressions": 3, "watch_time": "6s", "views_3s": 1},
+        {"pid": "nc-b-jul14", "date": "2026-07-14", "type": "native-mashup", "lane": "cozy-period", "title": "Rest day is a valid plan / Girl math: cancelled plans = self care (posted ~3h ago)", "views": null, "likes": 0, "comments": 0, "shares": 0, "note": "confirmed live on public page; exact time + views need NC login"},
+        {"pid": "nc-d6-1", "date": "2026-07-12", "type": "repost-as-page", "lane": "self-care-sunday", "title": "Sunday's job is recovery (via Operation Niki Official)", "views": 0, "likes": 0, "comments": 0, "shares": 0, "note": "D6 Sunday light post, shared 7:30 PM AS page"},
+        {"pid": "nc-m1", "date": "2026-07-10", "type": "native-mashup", "lane": "desk", "title": "Your shoulders have been holding your whole week (NC-M1)", "views": 129, "viewers": 122, "likes": 0, "comments": 0, "shares": 0, "net_follows": 0, "impressions": 123, "watch_time": "6m31s", "views_3s": 36, "note": "crossed 100 plays"},
         {"pid": "nc-m2", "date": "2026-07-10", "type": "native-mashup", "lane": "cozy-period", "title": "The survival kit nobody teaches you (NC-M2)", "views": 30, "viewers": 26, "likes": 0, "comments": 0, "shares": 0, "net_follows": 0, "impressions": 28, "watch_time": "1m21s", "views_3s": 9},
-        {"pid": "nc-m1", "date": "2026-07-10", "type": "native-mashup", "lane": "desk", "title": "Your shoulders have been holding your whole week (NC-M1)", "views": 129, "viewers": 122, "likes": 0, "comments": 0, "shares": 0, "net_follows": 0, "impressions": 123, "watch_time": "6m31s", "views_3s": 36, "note": "crossed 100 plays — FB sent milestone notification"},
-        {"pid": "nc-d2-1", "date": "2026-07-08", "type": "repost-as-page", "lane": "desk-stretch", "title": "30s upper-trap release (via Kick Pain)", "views": 2, "likes": 0, "comments": 0, "shares": 0, "note": "posted 7:49 PM 07-08 AS page (identity verified pre-post)"},
-        {"pid": "nc-d2-2", "date": "2026-07-08", "type": "repost-as-page", "lane": "relatable", "title": "Husband tries period-pain simulator (via The Crazy Hillbilly Gaming)", "views": 2, "likes": 0, "comments": 0, "shares": 0, "note": "7:50 PM"},
-        {"pid": "nc-d2-3", "date": "2026-07-08", "type": "repost-as-page", "lane": "winddown", "title": "Quiet evenings (via Rosemarie Victoria)", "views": 1, "likes": 0, "comments": 0, "shares": 0, "note": "7:51 PM"},
-        {"pid": "nc-d1-1p", "date": "2026-07-07", "type": "repost-as-page", "lane": "relatable", "title": "Tag the friend / period comedy (via The Gilbert Twins) — AS PAGE", "views": 6, "likes": 0, "comments": 0, "shares": 0},
-        {"pid": "nc-d1-2p", "date": "2026-07-07", "type": "repost-as-page", "lane": "winddown", "title": "This is your sign to romanticize / cozy wind-down (via Rasandailyy) — AS PAGE", "views": 7, "likes": 0, "comments": 0, "shares": 0},
-        {"pid": "nc-d1-3p", "date": "2026-07-07", "type": "repost-as-page", "lane": "desk-stretch", "title": "Save this for your 9 p.m. shoulders (via SynerMuscle) — AS PAGE", "views": 5, "likes": 0, "comments": 0, "shares": 0},
-        {"pid": "nc-pre-1", "date": "2026-07-06", "type": "product-reel", "lane": "pre-warm", "title": "NerveCalm product reel (Jul 6 1:02 PM)", "views": 5, "likes": 0, "comments": 0, "shares": 0},
-        {"pid": "nc-pre-2", "date": "2026-07-05", "type": "product-reel", "lane": "pre-warm", "title": "Available Now At Nervecalm.cc (Jul 5 10:10 PM)", "views": 8, "likes": 0, "comments": 0, "shares": 0},
-        {"pid": "nc-pre-3", "date": "2026-07-03", "type": "product-reel", "lane": "pre-warm", "title": "Available now! (Jul 3 6:29 PM)", "views": 8, "likes": 0, "comments": 0, "shares": 0},
+        {"pid": "nc-m3", "date": "2026-07-10", "type": "native-mashup", "lane": "winddown", "title": "Tomorrow starts tonight (NC-M3)", "views": 4, "viewers": 3, "likes": 0, "comments": 0, "shares": 0, "net_follows": 0, "impressions": 3, "watch_time": "6s", "views_3s": 1},
         {"pid": "nc-pre-4", "date": "2026-07-03", "type": "product-reel", "lane": "pre-warm", "title": "Available now at Nervecalm.cc (Jul 3 2:05 PM)", "views": 198, "likes": 1, "comments": 0, "shares": 0},
         {"pid": "nc-pre-5", "date": "2026-07-02", "type": "product-reel", "lane": "pre-warm", "title": "Available now at nervecalm.cc (Jul 2 7:55 PM)", "views": 216, "likes": 1, "comments": 0, "shares": 0}
       ]
