@@ -33,6 +33,16 @@ td.num{text-align:right;font-variant-numeric:tabular-nums}
 .best{color:var(--good)}
 .foot{color:var(--dim);font-size:12px;margin-top:22px;border-top:1px solid var(--line);padding-top:12px}
 .rl{color:var(--sw);text-decoration:none}
+/* store funnel */
+.wsec{color:var(--dim);font-size:12px;text-transform:uppercase;letter-spacing:.5px;margin:12px 0 4px;display:flex;align-items:center;gap:6px}
+.wsec a{color:var(--txt);text-decoration:none;border-bottom:1px dotted var(--line)}
+.wsec .live{font-size:9px;color:var(--good);border:1px solid #4ade8055;border-radius:20px;padding:1px 7px;margin-left:auto;text-transform:none;letter-spacing:0}
+.funnel{display:flex;gap:10px;margin:2px 0 6px;flex-wrap:wrap}
+.fst{background:var(--card2);border:1px solid var(--line);border-radius:9px;padding:8px 12px;flex:1;min-width:66px;text-align:center}
+.fst .n{font-size:17px;font-weight:700}
+.fst .l{font-size:10px;color:var(--dim);text-transform:uppercase;letter-spacing:.4px}
+.fst.views .n{color:var(--good)}
+.fst.sale .n{color:var(--warn)}
 /* highlights */
 .hl-wrap{display:flex;flex-direction:column;gap:10px}
 .hl{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px;display:flex;gap:14px;align-items:flex-start}
@@ -54,104 +64,124 @@ td.num{text-align:right;font-variant-numeric:tabular-nums}
 <h1>Social Command</h1>
 <div class="sub" id="updated">Loading…</div>
 <div class="tabs">
-  <button class="tab active" id="tab-overview" onclick="showTab('overview')">Overview</button>
-  <button class="tab" id="tab-highlights" onclick="showTab('highlights')">Highlights</button>
+<button class="tab active" id="tab-overview" onclick="showTab('overview')">Overview</button>
+<button class="tab" id="tab-highlights" onclick="showTab('highlights')">Highlights</button>
 </div>
 <div class="grid" id="pages"></div>
 <div id="highlights" style="display:none"></div>
 <div class="foot">
-  Counts pulled live from Facebook by the daily social-ops task; graphs render from the latest pull. Warm phase = audience-building reposts before ads. •
-  <a class="rl" href="./product-first-engine.html">← Product Engine</a>
+Social counts pulled by the daily social-ops sweep (graphs render from the latest pull). Store funnel (Add-to-Cart → Checkout → Sale) hydrates <b>live</b> from each store's public ladder endpoint on every load; Site Views come from Burst at the last sweep. Warm phase = audience-building reposts before ads. •
+<a class="rl" href="./product-first-engine.html">← Product Engine</a>
 </div>
 <script>
 const PCOL={softwater:'#e57ea8',nervecalm:'#7cc4c0'};
 const PNAME={softwater:'Softwater.Space',nervecalm:'NerveCalm'};
 function n(x){return x>=1000?(x/1000).toFixed(1)+'k':x}
 function showTab(t){
-  document.getElementById('pages').style.display = t==='overview'?'grid':'none';
-  document.getElementById('highlights').style.display = t==='highlights'?'block':'none';
-  document.getElementById('tab-overview').className = 'tab'+(t==='overview'?' active':'');
-  document.getElementById('tab-highlights').className = 'tab'+(t==='highlights'?' active':'');
+document.getElementById('pages').style.display = t==='overview'?'grid':'none';
+document.getElementById('highlights').style.display = t==='highlights'?'block':'none';
+document.getElementById('tab-overview').className = 'tab'+(t==='overview'?' active':'');
+document.getElementById('tab-highlights').className = 'tab'+(t==='highlights'?' active':'');
 }
 function pill(page){return `<span class="pill ${page}">${PNAME[page]||page}</span>`}
 function renderHighlights(data){
-  const box=document.getElementById('highlights');
-  const h=data.highlights||{comments:[],follower_events:[],likes:[]};
-  const items=[];
-  (h.comments||[]).forEach(c=>items.push({d:c.d,html:`
-    <div class="hl"><div class="ic">💬</div><div style="flex:1">
-      <div><span class="who">${c.who}</span> commented ${pill(c.page)}</div>
-      <div class="meta">${c.d}${c.post?' · on “'+c.post+'”':''}</div>
-      ${c.text?`<div class="txt">${c.text}</div>`:''}
-    </div><div class="act">${c.replied?'<span class="ok">replied ✓</span>':'<span class="todo">reply pending</span>'}</div></div>`}));
-  (h.follower_events||[]).forEach(f=>items.push({d:f.d,html:`
-    <div class="hl"><div class="ic">👤</div><div style="flex:1">
-      <div><span class="who">${f.who}</span> started following ${pill(f.page)}</div>
-      <div class="meta">${f.d}${f.source?' · via '+f.source:''}</div>
-    </div></div>`}));
-  (h.likes||[]).forEach(l=>items.push({d:l.d,html:`
-    <div class="hl"><div class="ic">👍</div><div style="flex:1">
-      <div><span class="who">${l.who||(l.count>1?l.count+' likes':'1 like')}</span> ${pill(l.page)}</div>
-      <div class="meta">${l.d}${l.post?' · on “'+l.post+'”':''}</div>
-    </div></div>`}));
-  items.sort((a,b)=>String(b.d).localeCompare(String(a.d)));
-  let out='';
-  out+='<div class="hsec">Follower count</div><div class="grid" style="margin-bottom:6px">';
-  data.pages.forEach(p=>{
-    const fh=p.followers_history||[]; const cur=fh.length?fh[fh.length-1].v:0;
-    const prev=fh.length>1?fh[fh.length-2].v:0; const delta=cur-prev;
-    out+=`<div class="card" style="padding:12px 16px"><div class="phead"><span class="dot" style="background:${PCOL[p.id]}"></span>
-      <span class="pname" style="font-size:14px">${p.name}</span>
-      <span class="badge">${cur} follower${cur===1?'':'s'}${delta>0?' · +'+delta+' new':''}</span></div></div>`;
-  });
-  out+='</div><div class="hsec">Activity feed</div>';
-  out+=items.length?'<div class="hl-wrap">'+items.map(i=>i.html).join('')+'</div>'
-    :'<div class="empty">No comments, likes or new followers logged yet — the daily 9am sweep fills this in.</div>';
-  box.innerHTML=out;
+const box=document.getElementById('highlights');
+const h=data.highlights||{comments:[],follower_events:[],likes:[]};
+const items=[];
+(h.comments||[]).forEach(c=>items.push({d:c.d,html:`
+<div class="hl"><div class="ic">💬</div><div style="flex:1">
+<div><span class="who">${c.who}</span> commented ${pill(c.page)}</div>
+<div class="meta">${c.d}${c.post?' · on “'+c.post+'”':''}</div>
+${c.text?`<div class="txt">${c.text}</div>`:''}
+</div><div class="act">${c.replied?'<span class="ok">replied ✓</span>':'<span class="todo">reply pending</span>'}</div></div>`}));
+(h.follower_events||[]).forEach(f=>items.push({d:f.d,html:`
+<div class="hl"><div class="ic">👤</div><div style="flex:1">
+<div><span class="who">${f.who}</span> started following ${pill(f.page)}</div>
+<div class="meta">${f.d}${f.source?' · via '+f.source:''}</div>
+</div></div>`}));
+(h.likes||[]).forEach(l=>items.push({d:l.d,html:`
+<div class="hl"><div class="ic">👍</div><div style="flex:1">
+<div><span class="who">${l.who||(l.count>1?l.count+' likes':'1 like')}</span> ${pill(l.page)}</div>
+<div class="meta">${l.d}${l.post?' · on “'+l.post+'”':''}</div>
+</div></div>`}));
+items.sort((a,b)=>String(b.d).localeCompare(String(a.d)));
+let out='';
+out+='<div class="hsec">Follower count</div><div class="grid" style="margin-bottom:6px">';
+data.pages.forEach(p=>{
+const fh=p.followers_history||[]; const cur=fh.length?fh[fh.length-1].v:0;
+const prev=fh.length>1?fh[fh.length-2].v:0; const delta=cur-prev;
+out+=`<div class="card" style="padding:12px 16px"><div class="phead"><span class="dot" style="background:${PCOL[p.id]}"></span>
+<span class="pname" style="font-size:14px">${p.name}</span>
+<span class="badge">${cur} follower${cur===1?'':'s'}${delta>0?' · +'+delta+' new':''}</span></div></div>`;
+});
+out+='</div><div class="hsec">Activity feed</div>';
+out+=items.length?'<div class="hl-wrap">'+items.map(i=>i.html).join('')+'</div>'
+:'<div class="empty">No comments, likes or new followers logged yet — the daily 9am sweep fills this in.</div>';
+box.innerHTML=out;
+}
+async function hydrateLadder(p){
+if(!p.web||!p.web.ladder_url) return;
+try{
+const j=await fetch(p.web.ladder_url+'?t='+Date.now()).then(r=>r.json());
+let atc=0,ck=0,sl=0;
+Object.values(j).forEach(d=>{atc+=d.atc||0;ck+=d.checkout||0;sl+=d.sale||0;});
+const set=(id,v)=>{const el=document.getElementById(id);if(el)el.textContent=v;};
+set('atc-'+p.id,atc);set('ck-'+p.id,ck);set('sl-'+p.id,sl);
+}catch(e){/* CORS/offline → keep JSON fallback numbers */}
 }
 async function load(){
-  let data;
-  try{ data=await fetch('./SOCIAL-STATS.json?t='+Date.now()).then(r=>r.json()); }
-  catch(e){ document.getElementById('updated').textContent='Could not load stats file.'; return; }
-  document.getElementById('updated').textContent='Last pull: '+new Date(data.updated).toLocaleString()+' · '+data.note;
-  renderHighlights(data);
-  const wrap=document.getElementById('pages'); wrap.innerHTML='';
-  data.pages.forEach(p=>{
-    const col=PCOL[p.id]||'#888';
-    const tot=p.posts.reduce((a,x)=>({v:a.v+ (x.views||0),l:a.l+(x.likes||0),c:a.c+(x.comments||0),s:a.s+(x.shares||0)}),{v:0,l:0,c:0,s:0});
-    const foll=p.followers_history?p.followers_history[p.followers_history.length-1].v:0;
-    const best=[...p.posts].sort((a,b)=>(b.views||0)-(a.views||0))[0];
-    const card=document.createElement('div'); card.className='card';
-    card.innerHTML=`
-      <div class="phead"><span class="dot" style="background:${col}"></span>
-        <span class="pname">${p.name}</span>
-        <span class="badge">${p.phase==='warm'?'WARM · day '+p.warm_day:p.phase.toUpperCase()}</span></div>
-      ${p.blocked?`<div style="color:var(--warn);font-size:12px;margin-top:4px">⚠ ${p.blocked}</div>`:''}
-      <div class="kpis">
-        <div class="kpi"><div class="n">${n(foll)}</div><div class="l">Followers</div></div>
-        <div class="kpi"><div class="n">${n(tot.v)}</div><div class="l">Views</div></div>
-        <div class="kpi"><div class="n">${n(tot.l)}</div><div class="l">Likes</div></div>
-        <div class="kpi"><div class="n">${n(tot.c)}</div><div class="l">Comments</div></div>
-        <div class="kpi"><div class="n">${n(tot.s)}</div><div class="l">Shares</div></div>
-      </div>
-      <div class="chartbox"><canvas id="ch-${p.id}"></canvas></div>
-      <table><thead><tr><th>Post</th><th>Lane</th><th class="num">Views</th><th class="num">Lk</th><th class="num">Cm</th></tr></thead>
-      <tbody>${p.posts.map(x=>`<tr><td>${x.title}${best&&x.pid===best.pid&&(x.views||0)>0?' <span class="best">▲ top</span>':''}</td>
-        <td><span class="tag">${x.lane}</span></td><td class="num">${n(x.views||0)}</td><td class="num">${n(x.likes||0)}</td><td class="num">${n(x.comments||0)}</td></tr>`).join('')}</tbody></table>`;
-    wrap.appendChild(card);
-    const byDay={};
-    p.posts.forEach(x=>{const d=x.date;byDay[d]=byDay[d]||{v:0,e:0};byDay[d].v+=(x.views||0);byDay[d].e+=(x.likes||0)+(x.comments||0)+(x.shares||0);});
-    const days=Object.keys(byDay).sort();
-    new Chart(document.getElementById('ch-'+p.id),{type:'line',
-      data:{labels:days.map(d=>d.slice(5)),datasets:[
-        {label:'Views',data:days.map(d=>byDay[d].v),borderColor:col,backgroundColor:col+'22',tension:.35,fill:true,yAxisID:'y'},
-        {label:'Engagement',data:days.map(d=>byDay[d].e),borderColor:'#fbbf24',tension:.35,yAxisID:'y1'}]},
-      options:{plugins:{legend:{labels:{color:'#8b93a4',boxWidth:10,font:{size:10}}}},
-        scales:{x:{ticks:{color:'#8b93a4',font:{size:10}},grid:{color:'#262c38'}},
-          y:{position:'left',ticks:{color:'#8b93a4',font:{size:10}},grid:{color:'#262c38'}},
-          y1:{position:'right',ticks:{color:'#fbbf24',font:{size:10}},grid:{display:false}}},
-        maintainAspectRatio:false}});
-  });
+let data;
+try{ data=await fetch('./SOCIAL-STATS.json?t='+Date.now()).then(r=>r.json()); }
+catch(e){ document.getElementById('updated').textContent='Could not load stats file.'; return; }
+document.getElementById('updated').textContent='Last pull: '+new Date(data.updated).toLocaleString()+' · '+data.note;
+renderHighlights(data);
+const wrap=document.getElementById('pages'); wrap.innerHTML='';
+data.pages.forEach(p=>{
+const col=PCOL[p.id]||'#888';
+const tot=p.posts.reduce((a,x)=>({v:a.v+ (x.views||0),l:a.l+(x.likes||0),c:a.c+(x.comments||0),s:a.s+(x.shares||0)}),{v:0,l:0,c:0,s:0});
+const foll=p.followers_history?p.followers_history[p.followers_history.length-1].v:0;
+const best=[...p.posts].sort((a,b)=>(b.views||0)-(a.views||0))[0];
+const w=p.web;
+const card=document.createElement('div'); card.className='card';
+card.innerHTML=`
+<div class="phead"><span class="dot" style="background:${col}"></span>
+<span class="pname">${p.name}</span>
+<span class="badge">${p.phase==='warm'?'WARM · day '+p.warm_day:p.phase.toUpperCase()}</span></div>
+${p.blocked?`<div style="color:var(--warn);font-size:12px;margin-top:4px">⚠ ${p.blocked}</div>`:''}
+<div class="kpis">
+<div class="kpi"><div class="n">${n(foll)}</div><div class="l">Followers</div></div>
+<div class="kpi"><div class="n">${n(tot.v)}</div><div class="l">Reel Views</div></div>
+<div class="kpi"><div class="n">${n(tot.l)}</div><div class="l">Likes</div></div>
+<div class="kpi"><div class="n">${n(tot.c)}</div><div class="l">Comments</div></div>
+<div class="kpi"><div class="n">${n(tot.s)}</div><div class="l">Shares</div></div>
+</div>
+${w?`<div class="wsec">Store · <a href="${w.url}" target="_blank">${w.url.replace('https://','')}</a><span class="live">● live</span></div>
+<div class="funnel">
+<div class="fst views"><div class="n" id="wv-${p.id}">${w.views!=null?n(w.views):'—'}</div><div class="l">Site Views</div></div>
+<div class="fst"><div class="n" id="atc-${p.id}">${w.atc||0}</div><div class="l">Add-to-Cart</div></div>
+<div class="fst"><div class="n" id="ck-${p.id}">${w.checkout||0}</div><div class="l">Checkout</div></div>
+<div class="fst sale"><div class="n" id="sl-${p.id}">${w.sale||0}</div><div class="l">Sales</div></div>
+</div>
+${w.views==null?'<div style="color:var(--dim);font-size:10.5px;margin:-2px 0 2px">Site Views pending WP login (Burst) — funnel counts are live from the ladder endpoint</div>':''}`:''}
+<div class="chartbox"><canvas id="ch-${p.id}"></canvas></div>
+<table><thead><tr><th>Post</th><th>Lane</th><th class="num">Views</th><th class="num">Lk</th><th class="num">Cm</th></tr></thead>
+<tbody>${p.posts.map(x=>`<tr><td>${x.title}${best&&x.pid===best.pid&&(x.views||0)>0?' <span class="best">▲ top</span>':''}</td>
+<td><span class="tag">${x.lane}</span></td><td class="num">${n(x.views||0)}</td><td class="num">${n(x.likes||0)}</td><td class="num">${n(x.comments||0)}</td></tr>`).join('')}</tbody></table>`;
+wrap.appendChild(card);
+hydrateLadder(p);
+const byDay={};
+p.posts.forEach(x=>{const d=x.date;byDay[d]=byDay[d]||{v:0,e:0};byDay[d].v+=(x.views||0);byDay[d].e+=(x.likes||0)+(x.comments||0)+(x.shares||0);});
+const days=Object.keys(byDay).sort();
+new Chart(document.getElementById('ch-'+p.id),{type:'line',
+data:{labels:days.map(d=>d.slice(5)),datasets:[
+{label:'Views',data:days.map(d=>byDay[d].v),borderColor:col,backgroundColor:col+'22',tension:.35,fill:true,yAxisID:'y'},
+{label:'Engagement',data:days.map(d=>byDay[d].e),borderColor:'#fbbf24',tension:.35,yAxisID:'y1'}]},
+options:{plugins:{legend:{labels:{color:'#8b93a4',boxWidth:10,font:{size:10}}}},
+scales:{x:{ticks:{color:'#8b93a4',font:{size:10}},grid:{color:'#262c38'}},
+y:{position:'left',ticks:{color:'#8b93a4',font:{size:10}},grid:{color:'#262c38'}},
+y1:{position:'right',ticks:{color:'#fbbf24',font:{size:10}},grid:{display:false}}},
+maintainAspectRatio:false}});
+});
 }
 load();
 </script>
