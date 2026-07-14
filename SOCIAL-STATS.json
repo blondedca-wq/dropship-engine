@@ -27,7 +27,7 @@
       "managed_by_account": "Sofe Walter",
       "views_28d": 1111,
       "followers_history": [{"d": "2026-07-07", "v": 0}, {"d": "2026-07-09", "v": 0}, {"d": "2026-07-12", "v": 2}, {"d": "2026-07-14", "v": 3}],
-      "web": {"url": "https://softwater.space", "ladder_url": "https://softwater.space/wp-json/ladder/v1/counts", "views": null, "views_note": "Burst pageviews — pending WP admin login", "atc": 15, "checkout": 17, "sale": 0, "ladder_note": "fallback totals as of 07-14 sweep; dashboard hydrates these live from the ladder endpoint on load"},
+      "web": {"url": "https://softwater.space", "ladder_url": "https://softwater.space/wp-json/ladder/v1/counts", "views": 70, "views_note": "Burst pageviews, last 7d (Jul 6-12): 41 sessions, 40 visitors, 73% bounce. ⚠ 15 ATC/17 checkout vs ~40 visitors = suspiciously high, likely bot/crawler — verify.", "atc": 15, "checkout": 17, "sale": 0, "ladder_note": "fallback totals as of 07-14 sweep; dashboard hydrates these live from the ladder endpoint on load"},
       "scheduled_next": [
         {"date": "2026-07-14", "time": "6:30pm", "title": "Night showers supremacy 🚿 Morning or night?"},
         {"date": "2026-07-15", "time": "9:30am", "title": "The no-frizz air-dry isn't a technique"},
@@ -64,7 +64,7 @@
       "views_28d": 719,
       "verify_status": "PARTIAL — verified via public page only (Nerve Calm account logged out). Actively posting today, newest reel 3h ago. Per-slot timing + view counts + 28d views need Nerve Calm Business Suite login.",
       "followers_history": [{"d": "2026-07-07", "v": 0}, {"d": "2026-07-09", "v": 0}, {"d": "2026-07-12", "v": 0}, {"d": "2026-07-14", "v": 1}],
-      "web": {"url": "https://nervecalm.cc", "ladder_url": "https://nervecalm.cc/wp-json/ladder/v1/counts", "views": null, "views_note": "Burst pageviews — pending WP admin login", "atc": 8, "checkout": 4, "sale": 0, "ladder_note": "fallback totals as of 07-14 sweep; dashboard hydrates these live from the ladder endpoint on load"},
+      "web": {"url": "https://nervecalm.cc", "ladder_url": "https://nervecalm.cc/wp-json/ladder/v1/counts", "views": null, "views_note": "Burst — pending NerveCalm WP login (separate install, own login wall)", "atc": 8, "checkout": 4, "sale": 0, "ladder_note": "fallback totals as of 07-14 sweep; dashboard hydrates these live from the ladder endpoint on load"},
       "posts": [
         {"pid": "nc-b-jul14", "date": "2026-07-14", "type": "native-mashup", "lane": "cozy-period", "title": "Rest day is a valid plan / Girl math: cancelled plans = self care (~3h ago)", "views": null, "likes": 0, "comments": 0, "shares": 0, "note": "confirmed live on public page; exact time + views need NC login"},
         {"pid": "nc-d6-1", "date": "2026-07-12", "type": "repost-as-page", "lane": "self-care-sunday", "title": "Sunday's job is recovery (via Operation Niki Official)", "views": 0, "likes": 0, "comments": 0, "shares": 0, "note": "D6 Sunday light post, shared 7:30 PM AS page"},
