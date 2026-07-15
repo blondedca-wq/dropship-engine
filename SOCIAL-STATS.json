@@ -1,6 +1,6 @@
 {
-  "updated": "2026-07-15T14:00:00Z",
-  "note": "07-15: ⭐ FIRST ADS LIVE on both stores (Higgs Seedance UGC, 15s). Overnight: Softwater Ad 1 (confession) 217 views, NerveCalm Ad 1 (wind-down, single-device) 68 views — strong for 3/1 followers. Ad 2 for each generating today. Followers steady SW 3 / NC 1. Prior 07-14 sweep + store analytics. SITE VIEWS now live for both stores (Burst 7d): Softwater 70 pv / NerveCalm 23 pv. Funnel (live from ladder): SW 15 ATC/17 checkout, NC 8 ATC/4 checkout, ZERO sales either store — ⚠ ATC/checkout counts run high vs real Burst visitors (~40 SW / ~19 NC), likely bot/crawler, verify. SCHEDULING CHECK: Softwater today (Jul 14) 9:30am + 12:30pm reels fired ON TIME; 6:30pm still queued; all 3 Jul 15 slots queued. ⚠ Jul 13 MISSED 2 of 3 slots — only one SW reel published Jul 13 (8:31pm, off-schedule); the 9:30am + 12:30pm Jul 13 scheduled reels vanished (neither published nor still scheduled = the audio-track/app-closed vanish bug). The 2 rendered-but-unposted reels can be rescheduled into an open future slot. NerveCalm (logged-out account, verified via public page only): actively posting today, newest reel 3h ago ('Rest day is a valid plan / Girl math: cancelled plans = self care'); NC precise per-slot timing NOT verifiable without Nerve Calm Business Suite login. FOLLOWERS: Softwater 2->3, NerveCalm 0->1 (first-ever NC follower). Metric note: today's new-post view figures are Business Suite 'Reach' (only value cleanly available in the list view).",
+  "updated": "2026-07-15T18:30:00Z",
+  "note": "07-15 PM: ⭐ Ad 2 LIVE on BOTH stores. Softwater Ad 2 'Cloudy glass test' (problem-test) → reel 2022441488640226. NerveCalm Ad 2 'The drawer' → reel 1483238807134404, posted AS the Nervecalm page (no-remote fix verified on-frame — she holds the wing unit, presses the on-device button). Both native VO, no music, Public, link pinned in 1st comment. Ad 1 numbers holding: SW confession 217, NC wind-down ~68. Followers steady SW 3 / NC 1. Store funnel (live from ladder): SW 15 ATC/17 checkout, NC 8 ATC/4 checkout — ZERO sales either store, winner clock not started; ATC/checkout still run high vs real Burst visitors (~40 SW / ~19 NC), likely bot/crawler, verify. Site views (Burst 7d): SW 70 pv / NC 23 pv. ⚠ NerveCalm PAGE compliance flags found this session: (1) page bio has pain-relief/medical wording ('relief that gates the pain signal… nerve pain… not a cure') — violates comfort-only rule; (2) a pregnancy warm reel is live on the NC page (~219 views) — violates no-pregnancy rule. Both need Ahmed cleanup. Warm phase D9.",
   "highlights": {
     "comments": [
       {"d": "2026-06-26", "page": "softwater", "who": "Sofe Walter (own account)", "post": "Available now at Softwater.space (Jun 26)", "text": "Self-comment from our own profile — not a customer.", "replied": true}
@@ -23,18 +23,16 @@
       "name": "Softwater.Space",
       "fb": "https://www.facebook.com/profile.php?id=61591763033139",
       "phase": "warm",
-      "warm_day": 8,
+      "warm_day": 9,
       "managed_by_account": "Sofe Walter",
       "views_28d": 1111,
       "followers_history": [{"d": "2026-07-07", "v": 0}, {"d": "2026-07-09", "v": 0}, {"d": "2026-07-12", "v": 2}, {"d": "2026-07-14", "v": 3}],
       "web": {"url": "https://softwater.space", "ladder_url": "https://softwater.space/wp-json/ladder/v1/counts", "views": 70, "views_note": "Burst pageviews, last 7d (Jul 6-12): 41 sessions, 40 visitors, 73% bounce. ⚠ 15 ATC/17 checkout vs ~40 visitors = suspiciously high, likely bot/crawler — verify.", "atc": 15, "checkout": 17, "sale": 0, "ladder_note": "fallback totals as of 07-14 sweep; dashboard hydrates these live from the ladder endpoint on load"},
       "scheduled_next": [
-        {"date": "2026-07-14", "time": "6:30pm", "title": "Night showers supremacy 🚿 Morning or night?"},
-        {"date": "2026-07-15", "time": "9:30am", "title": "The no-frizz air-dry isn't a technique"},
-        {"date": "2026-07-15", "time": "12:30pm", "title": "Odds are, this is your house too"},
         {"date": "2026-07-15", "time": "6:30pm", "title": "Midweek reset: warm light, clean towels"}
       ],
       "posts": [
+        {"pid": "sw-ad2", "date": "2026-07-15", "type": "AD", "lane": "problem-test", "title": "AD 2 — Cloudy glass test (Seedance UGC)", "views": 0, "likes": 0, "comments": 1, "shares": 0, "note": "posted 07-15 as Softwater.Space; reel 2022441488640226; softwater.space link pinned; native VO, no music. Fresh — 0 views at post."},
         {"pid": "sw-ad1", "date": "2026-07-14", "type": "AD", "lane": "confession", "title": "AD 1 — I blamed my shampoo (Seedance UGC)", "views": 217, "likes": 0, "comments": 1, "shares": 0, "note": "FIRST AD — 0→217 overnight; softwater.space link comment live."},
         {"pid": "sw-b-jul14-2", "date": "2026-07-14", "type": "native-mashup", "lane": "water-fact", "title": "Your dishes have been telling you all along (Jul 14 12:30pm)", "views": 194, "likes": 0, "comments": 0, "shares": 0, "note": "scheduled slot fired ON TIME; figure=reach"},
         {"pid": "sw-b-jul14-1", "date": "2026-07-14", "type": "native-mashup", "lane": "hair", "title": "Tell me your wash-day ritual (Jul 14 9:30am)", "views": 41, "likes": 0, "comments": 0, "shares": 0, "note": "scheduled slot fired ON TIME; crosspost; figure=reach"},
@@ -60,13 +58,14 @@
       "name": "NerveCalm",
       "fb": "https://www.facebook.com/profile.php?id=61591767083088",
       "phase": "warm",
-      "warm_day": 8,
+      "warm_day": 9,
       "comments_pending": 0,
       "views_28d": 719,
-      "verify_status": "PARTIAL — verified via public page only (Nerve Calm account logged out). Actively posting today, newest reel 3h ago. Per-slot timing + view counts + 28d views need Nerve Calm Business Suite login.",
+      "verify_status": "07-15: Nervecalm PAGE accessible this session (Ahmed logged into Nerve Calm acct; Claude used 'Switch into Page' to act as the page and posted Ad 2 as the page). Full per-slot NC sweep still TODO while logged in.",
       "followers_history": [{"d": "2026-07-07", "v": 0}, {"d": "2026-07-09", "v": 0}, {"d": "2026-07-12", "v": 0}, {"d": "2026-07-14", "v": 1}],
       "web": {"url": "https://nervecalm.cc", "ladder_url": "https://nervecalm.cc/wp-json/ladder/v1/counts", "views": 23, "views_note": "Burst pageviews, last 7d (Jul 6-12): 20 sessions, 19 visitors, 70% bounce. Burst flags multiple domains hitting the site (may split counts).", "atc": 8, "checkout": 4, "sale": 0, "ladder_note": "fallback totals as of 07-14 sweep; dashboard hydrates these live from the ladder endpoint on load"},
       "posts": [
+        {"pid": "nc-ad2", "date": "2026-07-15", "type": "AD", "lane": "confession-drawer", "title": "AD 2 — The drawer (Seedance UGC)", "views": 0, "likes": 0, "comments": 1, "shares": 0, "note": "posted 07-15 AS Nervecalm page; reel 1483238807134404; nervecalm.cc link pinned; on-device button, NO remote (fix verified on-frame). Fresh — 0 views at post."},
         {"pid": "nc-ad1", "date": "2026-07-14", "type": "AD", "lane": "winddown", "title": "AD 1 — Some evenings your body won't switch off (Seedance UGC)", "views": 68, "likes": 0, "comments": 1, "shares": 0, "note": "FIRST AD — 0→68 overnight; single-device fix; nervecalm.cc link comment live."},
         {"pid": "nc-b-jul14", "date": "2026-07-14", "type": "native-mashup", "lane": "cozy-period", "title": "Rest day is a valid plan / Girl math: cancelled plans = self care (~3h ago)", "views": null, "likes": 0, "comments": 0, "shares": 0, "note": "confirmed live on public page; exact time + views need NC login"},
         {"pid": "nc-d6-1", "date": "2026-07-12", "type": "repost-as-page", "lane": "self-care-sunday", "title": "Sunday's job is recovery (via Operation Niki Official)", "views": 0, "likes": 0, "comments": 0, "shares": 0, "note": "D6 Sunday light post, shared 7:30 PM AS page"},
