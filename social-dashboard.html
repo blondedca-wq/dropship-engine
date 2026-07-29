@@ -76,7 +76,7 @@ Social counts pulled by the daily social-ops sweep (graphs render from the lates
 <script>
 const PCOL={softwater:'#e57ea8',nervecalm:'#7cc4c0'};
 const PNAME={softwater:'Softwater.Space',nervecalm:'NerveCalm'};
-function n(x){return x>=1000?(x/1000).toFixed(1)+'k':x}
+function n(x){return (Number(x)||0).toLocaleString("en-US")}
 function showTab(t){
 document.getElementById('pages').style.display = t==='overview'?'grid':'none';
 document.getElementById('highlights').style.display = t==='highlights'?'block':'none';
@@ -150,7 +150,7 @@ card.innerHTML=`
 ${p.blocked?`<div style="color:var(--warn);font-size:12px;margin-top:4px">⚠ ${p.blocked}</div>`:''}
 <div class="kpis">
 <div class="kpi"><div class="n">${n(foll)}</div><div class="l">Followers</div></div>
-<div class="kpi"><div class="n">${n(tot.v)}</div><div class="l">Reel Views</div></div>
+<div class="kpi"><div class="n">${n(p.views_28d||tot.v)}</div><div class="l">Views &middot; 28d</div></div>
 <div class="kpi"><div class="n">${n(tot.l)}</div><div class="l">Likes</div></div>
 <div class="kpi"><div class="n">${n(tot.c)}</div><div class="l">Comments</div></div>
 <div class="kpi"><div class="n">${n(tot.s)}</div><div class="l">Shares</div></div>
